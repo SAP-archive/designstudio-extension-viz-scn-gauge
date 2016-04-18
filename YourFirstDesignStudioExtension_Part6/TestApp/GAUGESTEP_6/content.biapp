@@ -1,0 +1,264 @@
+<bi:biapp bi:version="1580" xmlns:bi="http://xml.sap.com/2011/biml/biapp" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/TR/REC-html40" xmlns:h="http://www.w3.org/TR/REC-html40" xmlns:sdk1="com.sap.sample.scngauge" sdk1:version="15.1">
+	<bi:component name="APPLICATION_PROPERTIES" type="APPLICATION_PROPERTIES">
+		<bi:property name="THEME" value="sap_platinum"/>
+		<bi:property name="ON_STARTUP">
+			<bi:value><![CDATA[INPUTFIELD_STARTANGLE.setValue("" + SCNGAUGE_1.getStartAngleDeg());
+INPUTFIELD_MAXENDANGLE.setValue("" + SCNGAUGE_1.getEndAngleDegMax());
+INPUTFIELD_ENDANGLE.setValue("" + SCNGAUGE_1.getEndAngleDeg());
+INPUTFIELD_MEASUREMINVAL.setValue("" + SCNGAUGE_1.getMeasureMin());
+INPUTFIELD_MEASUREMAXVAL.setValue("" + SCNGAUGE_1.getMeasureMax());
+INPUTFIELD_MEASUREVAL.setValue("" + SCNGAUGE_1.getMeasureVal());
+
+var useMeasures = SCNGAUGE_1.getUseMeasures();
+
+if (useMeasures == true){
+	RADIOBUTTONGROUP_1.setSelectedValue("1");
+} else {
+	RADIOBUTTONGROUP_1.setSelectedValue("0");
+}
+
+
+
+]]></bi:value>
+		</bi:property>
+	</bi:component>
+	<bi:data_source_alias name="DS_1" type="QUERY_DATA_SOURCE">
+		<bi:property name="DATA_SOURCE_DEFINITION">
+			<bi:property name="DATA_SOURCE_CONNECTION" value="local"/>
+			<bi:property name="DATA_SOURCE_TYPE" type="CHOICE" value="INFOPROVIDER"/>
+			<bi:property name="DATA_SOURCE_NAME" value="GAUGESTEP_6\ZPM_0D_DX_M01_Q0001.csv"/>
+			<bi:property name="DATA_SOURCE_INITIAL_STATE">
+				<bi:value><![CDATA[eNrtWPtv2zYQ/lcM/75KLtYsAxQBNHmWiVAkQ0p+YQDhpW5mYHMH2xnQ/vU7PS3ZSuMGafeAgyAQ70Xefd+JpwRDTq2bcJiGQaxYKsB6YcDlSDlt1IQzML3N8o/VTT8iaQQ2Ae2uflno2PnMsZmL/YG7831/8OZ+91cfXe9SMPOvc7EggCZcSWc1oeCsMgmXUW//6U8MwmBEUpEcGSYkOd+wIShtKTEJWE5kliVLadIPAzomhtAEDLcJFuVYUOaU5TA0EFHF+o24WdW8tsMTAW5Xnz6sHx63q92z/t7JkbzaoflcZfmSDCbcpkTwBckDCZiACMtKBl6XMoghHoJxhFKwuIc2YEEmucnRMkxghlFaorYB41YLMne3MD+2844Cd4Odx8MFl8BccTLrlEHaYkEZN2WxiKUgGboH3kGIFSxi4tNRUo0yt47R+3W9eb/ePNz0Ww4Z55rQ0NQmKnYaqx8Dlj9Dd8zBEEPH8977xxVb7jMkyp9+iUwWBnfDvJyFpH5GFPiQC57Mw/xRQOCdqs476H8WoGZdXtBo353mF/p20HfMGQP5Tdn7z7GSKtyVS5v1yohHKerC/fZxhXTt0AQLMMrZVGfntRnvIqNSnYUtnJ7Wn3NRdEHIDBfCMTWV7sj+6Zu0aA13fPOOlHHN3P+X9+uZuZNZBieZcVuewKhpRtW6Y1CJ/hMIPyx/3yGy5arEo3jd+MiwxjLwGt52HiOGhlNXmOCcVsfq1FWdp5XleS5DlSAbarrW8lMS5v5SSeggYBH7RIy/jCTEYdOZOf4leEGxQkRBCPsUn5/1e44xYYMrL+0JL8OthR5VIo3lBcDvAeChV18Pv5EBuID3+uB5XwTAK96CB//ebv2w0YjsarNf7tcfNzf9IeCrE5xMs+u23/u82n5sG0hlYiL6jTDVGGarh979b8vt8n6/2q53+/V963Vf3SA+8QfX7xaamcXbVP7oGzaN9NDP7zOvjseActzNhj8MEP1qEViKk6CM3AhTVyZXHokCiPWYWL4AVvGgIQksjyTeDxPchIiaKC0h7o3zgHAYl6aiGFwK1DsUHcbuMIzUM+wXrRC5uIpXnqghCYjWYu46IiSqvOls3T1nmJbxEOwYR7evCHuWR9Vep8XrUOAsZ0kUmaJ7cqSbglp9y1lLm6276d6g5qux9N1U//Tz1fB6AEMzvrD0wtJ/K0uvp3Ks317dLQYXll5Y+pos9ZqTx+HrymVEcILHPMmGtG5FOcopjTNb9a0HMwq6WuD3N+P1V+DhP95/A1BHw/c=]]></bi:value>
+			</bi:property>
+		</bi:property>
+	</bi:data_source_alias>
+	<bi:component name="ROOT" type="ABSOLUTE_LAYOUT_COMPONENT">
+		<bi:component name="SCNGAUGE_1" type="com_sap_sample_scngauge_SCNGauge">
+			<bi:property name="LEFT_MARGIN" value="293"/>
+			<bi:property name="TOP_MARGIN" value="16"/>
+			<bi:property name="innerRad" value="0"/>
+			<bi:property name="paddingTop" value="10"/>
+			<bi:property name="paddingBottom" value="15"/>
+			<bi:property name="paddingLeft" value="20"/>
+			<bi:property name="paddingRight" value="10"/>
+			<bi:property name="endAngleDeg" value="90"/>
+			<bi:property name="endAngleDegMax" value="90"/>
+			<bi:property name="measureVal" value="10">
+				<bi:binding name="DATA_CELL_2" type="DATA_CELL_BINDING">
+					<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+					<bi:property name="DATA_SELECTION">
+						<bi:value><![CDATA[{"(MEASURES_DIMENSION)":"00A0185ZPDRZ2UN40RDWGPB0T","0D_DBREGCOD":"80501"}]]></bi:value>
+					</bi:property>
+				</bi:binding>
+			</bi:property>
+			<bi:property name="measureMax" value="100">
+				<bi:binding name="DATA_CELL_1" type="DATA_CELL_BINDING">
+					<bi:property name="DATA_SOURCE_ALIAS_REF" value="DS_1"/>
+					<bi:property name="DATA_SELECTION">
+						<bi:value><![CDATA[{"(MEASURES_DIMENSION)":"00A0185ZPDRZ2UN40RDWGPB0T","0D_DBREGCOD":"(RESULT_MEMBER)"}]]></bi:value>
+					</bi:property>
+				</bi:binding>
+			</bi:property>
+			<bi:property name="useMeasures" value="X"/>
+		</bi:component>
+		<bi:component name="GRID_LAYOUT_1" type="GRID_LAYOUT_COMPONENT">
+			<bi:property name="ROW_SETTINGS_LIST" type="ORDEREDLIST" value="">
+				<bi:property name="ROW_HEIGHT" index="0" value="1"/>
+				<bi:property name="ROW_HEIGHT" index="1" value="1"/>
+				<bi:property name="ROW_HEIGHT" index="2" value="1"/>
+				<bi:property name="ROW_HEIGHT" index="3" value="2"/>
+				<bi:property name="ROW_HEIGHT" index="4" value="1"/>
+				<bi:property name="ROW_HEIGHT" index="5" value="1"/>
+				<bi:property name="ROW_HEIGHT" index="6" value="1"/>
+			</bi:property>
+			<bi:property name="COLUMN_SETTINGS_LIST" type="ORDEREDLIST" value="">
+				<bi:property name="COLUMN_WIDTH" index="0" value="2"/>
+				<bi:property name="COLUMN_WIDTH" index="1" value="1"/>
+			</bi:property>
+			<bi:property name="GRID_ORIENTATION" value="V"/>
+			<bi:property name="LEFT_MARGIN" value="14"/>
+			<bi:property name="TOP_MARGIN" value="16"/>
+			<bi:property name="BOTTOM_MARGIN" value="auto"/>
+			<bi:property name="RIGHT_MARGIN" value="auto"/>
+			<bi:property name="WIDTH" value="270"/>
+			<bi:property name="HEIGHT" value="224"/>
+			<bi:component name="GRID_CELL_1" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_1" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Start Angle"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_2" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_STARTANGLE" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="0.0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_STARTANGLE.getValue());
+SCNGAUGE_1.setStartAngleDeg(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_3" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_2" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="End Angle (Max)"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_4" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_MAXENDANGLE" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="90.0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_MAXENDANGLE.getValue());
+SCNGAUGE_1.setEndAngleDegMax(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_5" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_3" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="End Angle"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_6" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_ENDANGLE" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="90.0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_ENDANGLE.getValue());
+SCNGAUGE_1.setEndAngleDeg(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_7" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_4" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Use Measures"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_8" type="GRID_CELL_COMPONENT">
+				<bi:component name="RADIOBUTTONGROUP_1" type="RADIOBUTTONGROUP_COMPONENT">
+					<bi:property name="ITEMS" type="ORDEREDLIST">
+						<bi:property name="SELECTION_ITEM" index="0">
+							<bi:property name="VALUE" value="0"/>
+							<bi:property name="TEXT" value="False"/>
+							<bi:property name="SELECTED" value="X"/>
+						</bi:property>
+						<bi:property name="SELECTION_ITEM" index="1">
+							<bi:property name="VALUE" value="1"/>
+							<bi:property name="TEXT" value="True"/>
+						</bi:property>
+					</bi:property>
+					<bi:property name="LEFT_MARGIN" value="11"/>
+					<bi:property name="TOP_MARGIN" value="8"/>
+					<bi:property name="COLUMNS" value="2"/>
+					<bi:property name="WIDTH" value="67"/>
+					<bi:property name="ON_SELECT">
+						<bi:value><![CDATA[var asInt = Convert.stringToInt(RADIOBUTTONGROUP_1.getSelectedValue());
+
+if (asInt == 0){
+	SCNGAUGE_1.setUseMeasures(false);
+}
+else {
+	SCNGAUGE_1.setUseMeasures(true);
+}]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_9" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_5" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Measure Min Value"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_10" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_MEASUREMINVAL" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_MEASUREMINVAL.getValue());
+SCNGAUGE_1.setMeasureMin(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_11" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_6" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Measure Max Value"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_12" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_MEASUREMAXVAL" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_MEASUREMAXVAL.getValue());
+SCNGAUGE_1.setMeasureMax(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_13" type="GRID_CELL_COMPONENT">
+				<bi:component name="TEXT_7" type="TEXT_COMPONENT">
+					<bi:property name="TEXT" value="Measure Value"/>
+					<bi:property name="LEFT_MARGIN" value="12"/>
+					<bi:property name="TOP_MARGIN" value="3"/>
+					<bi:property name="HEIGHT" value="25"/>
+					<bi:property name="WIDTH" value="157"/>
+				</bi:component>
+			</bi:component>
+			<bi:component name="GRID_CELL_14" type="GRID_CELL_COMPONENT">
+				<bi:component name="INPUTFIELD_MEASUREVAL" type="INPUTFIELD_COMPONENT">
+					<bi:property name="LEFT_MARGIN" value="auto"/>
+					<bi:property name="TOP_MARGIN" value="auto"/>
+					<bi:property name="BOTTOM_MARGIN" value="4"/>
+					<bi:property name="RIGHT_MARGIN" value="0"/>
+					<bi:property name="WIDTH" value="88"/>
+					<bi:property name="VALUE" value="0"/>
+					<bi:property name="ON_CHANGE">
+						<bi:value><![CDATA[var asInt = Convert.stringToFloat(INPUTFIELD_MEASUREVAL.getValue());
+SCNGAUGE_1.setMeasureVal(asInt);]]></bi:value>
+					</bi:property>
+				</bi:component>
+			</bi:component>
+		</bi:component>
+		<bi:component name="CONTEXT_MENU" type="CONTEXT_MENU_COMPONENT"/>
+	</bi:component>
+</bi:biapp>

@@ -1,0 +1,83 @@
+class com.sap.sample.scngauge.SCNGauge extends Component {
+
+	/* Returns the end angle of the gauge. */
+	float getEndAngleDeg() {*
+		return this.endAngleDeg;
+	*}
+	
+	/* Sets the end angle of the gauge. */
+	void setEndAngleDeg(/* New angle */ float newAngle) {*
+		this.endAngleDeg = newAngle;
+	*}
+	
+	/* Returns the start angle of the gauge. */
+	float getStartAngleDeg() {*
+		return this.startAngleDeg;
+	*}
+	
+	/* Sets the start angle of the gauge. */
+	void setStartAngleDeg(/* New angle */ float newAngle) {*
+		this.startAngleDeg = newAngle;
+	*}
+	
+	/* Returns the current color of the gauge. */
+	String getColor() {*
+		return this.colorCode;
+	*}
+
+	/* Sets the current color of the gauge. */
+	void setColor(/* New color */ String newColor) {*
+		this.colorCode = newColor;
+	*}
+
+
+	/* Returns whether or not gauge angles cab be indirectly set, based on measure values. */
+	boolean getUseMeasures() {*
+		return this.useMeasures;
+	*}
+
+	/* Enables or disables the ability to indirectly set gauge angles, based on measure values. */
+	void setUseMeasures(/* New boolean */ boolean useMeasures) {*
+		this.useMeasures = useMeasures;
+	*}
+	
+	/* Returns the maximum end angle of the gauge. */
+	float getEndAngleDegMax() {*
+		return this.endAngleDegMax;
+	*}
+	
+	/* Sets the maximum end angle of the gauge. */
+	void setEndAngleDegMax(/* New angleMax */ float newAngleMax) {*
+		this.endAngleDegMax = newAngleMax;
+	*}
+	
+	/* Returns the measure value at which the gauge will peg (read its maximum value). */
+	float getMeasureMax() {*
+		return this.measureMax;
+	*}
+	
+	/* Sets the measure value at which the gauge will peg (read its maximum value). */
+	void setMeasureMax(/* New measureMax */ float measureMax) {*
+		this.measureMax = measureMax;
+	*}
+	
+	/* Returns the measure value at which the gauge will read its minimum value. */
+	float getMeasureMin() {*
+		return this.measureMin;
+	*}
+	
+	/* Sets the measure value at which the gauge will read its minimum value. */
+	void setMeasureMin(/* New measureMin */ float measureMin) {*
+		this.measureMin = measureMin;
+	*}
+	
+	/* Returns the measure value from which the gauge will determine its angle. */
+	float getMeasureVal() {*
+		return this.measureVal;
+	*}
+	
+	/* Sets the measure value from which the gauge will determine its angle. */
+	void setMeasureVal(/* New measureVal */ float measureVal) {*
+		this.measureVal = measureVal;
+	*}
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension 
+	eula="" 
+	id="com.sap.sample.scngauge" 
+	title="SCN Tutorial Gauge" 
+	vendor="SAP" 
+	version="15.1" 
+	xmlns="http://www.sap.com/bi/zen/sdk" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.sap.com/bi/zen/sdk http://www.sap.com/bi/zen/sdk ">
+  <license>license</license>
+  <group
+	id="SCNGaugeAngleSettings"
+	title="Angle Settings"
+	tooltip="Gauge Angle Settings"/>
+  <component 
+  	databound="false" 
+  	group="" 
+  	handlerType="div" 
+  	icon="res/gauge.png" 
+  	id="SCNGauge" 
+  	propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html" 
+  	title="Gauge" 
+  	tooltip="" 
+  	visible="true">
+    <stdInclude kind="d3"/>
+    <jsInclude>res/js/component.js</jsInclude>
+	<cssInclude>res/css/component.css</cssInclude>
+	
+	<property
+		id="startAngleDeg"
+		title="Start Angle"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="endAngleDeg"
+		title="End Angle"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="innerRad"
+		title="Inner Radius"
+		type="float"
+		bindable="true"/>
+	<property
+		id="outerRad"
+		title="Outer Radius"
+		type="float"
+		visible="false"/>
+	<property
+		id="offsetLeft"
+		title="Centerpoint Offset X-Axis"
+		type="int"		
+		visible="false"/>
+	<property
+		id="offsetDown"
+		title="Centerpoint Offset Y-Axis"
+		type="int"
+		visible="false"/>
+	<property
+		id="paddingTop"
+		title="Top Padding"
+		type="int"/>
+	<property
+		id="paddingBottom"
+		title="Bottom Padding"
+		type="int"/>
+	<property
+		id="paddingLeft"
+		title="Left Padding"
+		type="int"/>
+	<property
+		id="paddingRight"
+		title="Right Padding"
+		type="int"/>
+	<property
+		id="colorCode"
+		title="Color"
+		type="Color"
+		bindable="true"/>
+		
+	<property
+		id="useMeasures"
+		title="Use Measures"
+		type="boolean"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="endAngleDegMax"
+		title="End Angle Max"
+		type="float"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureMax"
+		title="Measure Max Value"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureMin"
+		title="Measure Min Value"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+	<property
+		id="measureVal"
+		title="Measure"
+		type="int"
+		bindable="true"
+		group="SCNGaugeAngleSettings"/>
+		
+	<initialization>
+		<defaultValue property="WIDTH">200</defaultValue>
+		<defaultValue property="HEIGHT">200</defaultValue>
+		<defaultValue property="startAngleDeg">-90.0</defaultValue>
+		<defaultValue property="endAngleDeg">90.0</defaultValue>
+		<defaultValue property="useMeasures">false</defaultValue>
+		<defaultValue property="endAngleDegMax">90.0</defaultValue>
+		<defaultValue property="colorCode">blue</defaultValue>
+	</initialization>	
+  </component>
+</sdkExtension>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension 
+	eula="" 
+	id="com.sap.sample.scngauge" 
+	title="SCN Tutorial Gauge" 
+	vendor="SAP" 
+	version="15.1" 
+	xmlns="http://www.sap.com/bi/zen/sdk" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.sap.com/bi/zen/sdk http://www.sap.com/bi/zen/sdk ">
+  <license>license</license>
+  <component 
+  	databound="false" 
+  	group="" 
+  	handlerType="div" 
+  	icon="res/gauge.png" 
+  	id="SCNGauge" 
+  	propertySheetPath="res/additional_properties_sheet/additional_properties_sheet.html" 
+  	title="Gauge" 
+  	tooltip="" 
+  	visible="true">
+    <stdInclude kind="d3"/>
+    <jsInclude>res/js/component.js</jsInclude>
+	<cssInclude>res/css/component.css</cssInclude>
+	<initialization>
+		<defaultValue property="WIDTH">100</defaultValue>
+		<defaultValue property="HEIGHT">100</defaultValue>
+	</initialization>	
+  </component>
+</sdkExtension>

@@ -1,0 +1,33 @@
+class com.sap.sample.scngauge.SCNGauge extends Component {
+
+	/* Returns the end angle of the gauge. */
+	float getEndAngleDeg() {*
+		return this.endAngleDeg;
+	*}
+	
+	/* Sets the end angle of the gauge. */
+	void setEndAngleDeg(/* New angle */ float newAngle) {*
+		this.endAngleDeg = newAngle;
+	*}
+	
+	/* Returns the start angle of the gauge. */
+	float getStartAngleDeg() {*
+		return this.startAngleDeg;
+	*}
+	
+	/* Sets the start angle of the gauge. */
+	void setStartAngleDeg(/* New angle */ float newAngle) {*
+		this.startAngleDeg = newAngle;
+	*}
+	
+	/* Returns the current color of the gauge. */
+	String getColor() {*
+		return this.colorCode;
+	*}
+
+	/* Sets the current color of the gauge. */
+	void setColor(/* New color */ String newColor) {*
+		this.colorCode = newColor;
+	*}
+
+}

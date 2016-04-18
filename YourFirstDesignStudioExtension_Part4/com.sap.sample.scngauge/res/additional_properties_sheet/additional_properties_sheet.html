@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Gauge Padding Visualizert</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+		<script src="/aad/zen.rt.components.sdk/resources/js/sdk_propertysheets_handler.js"></script>
+		<script src="additional_properties_sheet.js"></script>
+	</head>
+	<script>
+		new com.sap.sample.scngauge.SCNGaugePropertyPage();
+	</script>
+	<body>
+		<form id="form">
+			<fieldset>
+				<legend>Gauge Padding Visualizer</legend>
+				<table>
+					<tr>
+						<td>Padding Top</td>
+						<td>
+							<input id="aps_padding_top" type="number" name="paddingTop" size="40" maxlength="40"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>Padding Bottom</td>
+						<td>
+							<input id="aps_padding_bottom" type="number" name="paddingBottom" size="40" maxlength="40"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>Padding Left</td>
+						<td>
+							<input id="aps_padding_left" type="number" name="paddingLeft" size="40" maxlength="40"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>Padding Right</td>
+						<td>
+							<input id="aps_padding_right" type="number" name="paddingRight" size="40" maxlength="40"></input>
+						</td>
+					</tr>
+					<tr>
+						<td>Width</td>
+						<td>
+							<p id="aps_width"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Height</td>
+						<td>
+							<p id="aps_height"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Outer Radius</td>
+						<td>
+							<p id="aps_radius"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input name="submit"  type="submit" value="Refresh"/>
+						</td>
+					</tr>
+					
+				</table>
+			</fieldset>
+		</form>
+		<div id='content'></div>
+		<div id='componentproxy'></div>
+	</body>
+</html>
